@@ -26,23 +26,40 @@
 <body>
     <div class="grain"></div>
     <div class="header">
-        <h1>NOIR</h1>
-        <nav>
+        <h1 class="header-logo fade-in">NOIR</h1>
+        <nav class="header-nav">
             <a href="#home">Home</a>
             <a href="#collections">Collections</a>
             <a href="#products">Products</a>
-            <a href="">Contact</a>
+            <a href="#reviews">Reviews</a>
         </nav>
+        <button id="menuToggle" class="mobile-menu-button" aria-label="Toggle menu">
+            <i class="ri-menu-3-line"></i>
+        </button>
+        <div id="mobileMenu" class="mobile-menu">
+            <div class="mobile-menu-header">
+                <h1 class="mobile-menu-logo">NOIR</h1>
+                <button id="menuClose" class="mobile-menu-close" aria-label="Close menu">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <a href="#home">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#products">Products</a>
+                <a href="#reviews">Reviews</a>
+            </nav>
+        </div>
     </div>
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
                 <p class="hero-eyebrow">MORE THAN FASHION</p>
-                <h2>A Statement of Identity, <span class="accent">Elegance,</span> and
+                <h2 class="fade-up">A Statement of Identity, <span class="accent">Elegance,</span> and
                     Presence.</h2>
-                <div class="buttons">
-                    <a href="#collections"><button>View Collections <i class="ri-arrow-right-line"></i></button></a>
-                    <a href="#products"><button>View Products<i class="ri-arrow-right-up-line"></i></button></a>
+                <div class="buttons fade-up" style="--delay: 0.2s;">
+                    <a href="#products"><button>View Products <i class="ri-arrow-right-line"></i></button></a>
+                    <a href="#about"><button>About Us<i class="ri-arrow-right-up-line"></i></button></a>
                 </div>
             </div>
             <div class="hero-img-wrapper">
@@ -74,26 +91,26 @@
         <h1 class="bg-text">NOIR</h1>
         <div class="content">
             <div class="text">
-                <h4>CURATED FOR PRESENCE</h4>
-                <h1>Featured Collections</h1>
+                <h4 class="fade-left">CURATED FOR PRESENCE</h4>
+                <h1 class="fade-left" style="--delay: 0.2s;">Featured Collections</h1>
                 <p>Each piece is intentionally designed to define who you are without saying a word</p>
             </div>
             <div class="collections">
-                <div class="collection-card">
+                <div class="collection-card fade-up">
                     <img src="1040824163863695555.jpeg" alt="Monochrome model in black styling">
                     <div class="card-label">
                         <h4>NOIR ESSENTIALS</h4>
                         <p>Timeless. Minimal. You.</p>
                     </div>
                 </div>
-                <div class="collection-card">
+                <div class="collection-card fade-up" style="--delay: 0.15s;">
                     <img src="AI-generated.jpeg" alt="Monochrome model in an evening dress">
                     <div class="card-label">
                         <h4>NOIR WOMEN</h4>
                         <p>Bold. Elegant. Refined.</p>
                     </div>
                 </div>
-                <div class="collection-card">
+                <div class="collection-card fade-up" style="--delay: 0.3s;">
                     <img src="53832158044008263.jpeg" alt="Monochrome profile portrait in black styling">
                     <div class="card-label">
                         <h4>NOIR SIGNATURE</h4>
@@ -163,30 +180,42 @@
                 <a href="#products">VIEW ALL PRODUCTS &rarr;</a>
             </div>
             <div class="products-grid">
-                <article class="product-card">
+                <article class="product-card fade-up">
                     <div class="product-media product-media-jacket">
                         <img src="product3.jpeg" alt="NOIR Leather Jacket styled in a dark editorial product portrait">
+                        <button id="addToCart" class="product-add-button">
+                            <i class="ri-add-line"></i>
+                        </button>
                     </div>
                     <h3>NOIR Leather Jacket</h3>
                     <p>&#8358;69,000</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card fade-up" style="--delay: 0.1s;">
                     <div class="product-media product-media-shirt">
                         <img src="product1.jpeg" alt="NOIR Silk Shirt styled under a black tailored jacket">
+                        <button id="addToCart" class="product-add-button">
+                            <i class="ri-add-line"></i>
+                        </button>
                     </div>
                     <h3>NOIR Silk Shirt</h3>
                     <p>&#8358;45,000</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card fade-up" style="--delay: 0.2s;">
                     <div class="product-media product-media-hoodie">
                         <img src="img.jpeg" alt="NOIR Hoodie in a dark studio product look">
+                        <button id="addToCart" class="product-add-button">
+                            <i class="ri-add-line"></i>
+                        </button>
                     </div>
                     <h3>NOIR Hoodie</h3>
                     <p>&#8358;38,000</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card fade-up" style="--delay: 0.3s;">
                     <div class="product-media product-media-pants">
                         <img src="product4.jpeg" alt="NOIR Tailored Pants in a full-length monochrome product portrait">
+                        <button id="addToCart" class="product-add-button">
+                            <i class="ri-add-line"></i>
+                        </button>
                     </div>
                     <h3>NOIR Tailored Pants</h3>
                     <p>&#8358;52,000</p>
@@ -218,26 +247,26 @@
         <h1 class="bg-text">NOIR</h1>
         <div class="content">
             <div class="text">
-                <h4>NEW IN</h4>
-                <h1>The Latest Collections</h1>
+                <h4 class="fade-left">NEW IN</h4>
+                <h1 class="fade-left" style="--delay: 0.2s;">The Latest Collections</h1>
                 <p>Pieces that speak before you do.Redefine your presence with our latest collections</p>
             </div>
             <div class="collections">
-                <div class="collection-card">
+                <div class="collection-card fade-up">
                     <img src="Vintage Black and Whit2_.jpeg" alt="Monochrome model in black styling">
                     <!-- <div class="card-label">
                         <h4>NOIR ESSENTIALS</h4>
                         <p>Timeless. Minimal. You.</p>
                     </div> -->
                 </div>
-                <div class="collection-card">
+                <div class="collection-card fade-up" style="--delay: 0.15s;">
                     <img src="noircasual.jpeg" alt="Monochrome model in an evening dress">
                     <!-- <div class="card-label">
                         <h4>NOIR WOMEN</h4>
                         <p>Bold. Elegant. Refined.</p>
                     </div> -->
                 </div>
-                <div class="collection-card">
+                <div class="collection-card fade-up" style="--delay: 0.3s;">
                     <img src="noirstreet.jpeg" alt="Monochrome profile portrait in black styling">
                     <!-- <div class="card-label">
                         <h4>NOIR STREET</h4>
@@ -267,7 +296,7 @@
             <span>NOIR</span><span class="dot">✦</span>
         </div>
     </div>
-    <section class="sec-6">
+    <section class="sec-6" id="about">
         <div class="content">
             <div class="text">
                 <h4>ABOUT THE BRAND</h4>
@@ -299,7 +328,7 @@
             <span>NOIR</span><span class="dot">✦</span>
         </div>
     </div>
-    <section class="sec-7">
+    <section class="sec-7" id="reviews">
         <div class="testimonials-container">
             <div class="testimonials-header">
                 <p class="testimonials-eyebrow">WORDS THAT MATTER</p>
@@ -384,51 +413,115 @@
             <span>NOIR</span><span class="dot">✦</span>
         </div>
     </div>
-    <section class="footer-benefits">
-        <div class="benefits-container">
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="ri-shield-check-line"></i>
+    <footer>
+        <!-- Features Strip -->
+        <div class="footer-features-strip">
+            <div class="footer-features-container">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="ri-medal-line"></i>
+                    </div>
+                    <div class="feature-text">
+                        <p class="feature-label">PREMIUM QUALITY</p>
+                        <p class="feature-description">Crafted with the finest materials</p>
+                    </div>
                 </div>
-                <h3>Premium Quality</h3>
-                <p>Crafted with precision, designed for timeless presence.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="ri-secure-payment-line"></i>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="ri-lock-line"></i>
+                    </div>
+                    <div class="feature-text">
+                        <p class="feature-label">SECURE PAYMENTS</p>
+                        <p class="feature-description">Safe, fast and reliable checkout</p>
+                    </div>
                 </div>
-                <h3>Secure Payments</h3>
-                <p>Smooth and protected checkout for every order.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="ri-global-line"></i>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="ri-global-line"></i>
+                    </div>
+                    <div class="feature-text">
+                        <p class="feature-label">WORLDWIDE SHIPPING</p>
+                        <p class="feature-description">Delivering style to your doorstep</p>
+                    </div>
                 </div>
-                <h3>Worldwide Shipping</h3>
-                <p>Luxury fashion delivered across the globe.</p>
             </div>
         </div>
-    </section>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <h2>NOIR</h2>
-                    <p>Modern Fashion. Timeless Presence.</p>
+
+        <!-- Main Footer Body -->
+        <div class="footer-body">
+            <div class="footer-container">
+                <!-- Column 1: Brand -->
+                <div class="footer-column footer-brand">
+                    <h2 class="footer-brand-logo">NOIR</h2>
+                    <p class="footer-brand-tagline">Where fashion meets identity.</p>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="Instagram">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <i class="ri-tiktok-line"></i>
+                        </a>
+                    </div>
                 </div>
-                <nav class="footer-nav">
-                    <a href="#collections">Collections</a>
-                    <a href="#">About</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">X / Twitter</a>
-                    <a href="#">Contact</a>
-                </nav>
+
+                <!-- Column 2: Shop -->
+                <div class="footer-column">
+                    <h3 class="footer-column-heading">SHOP</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">New In</a></li>
+                        <li><a href="#">All Products</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Lookbook</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company -->
+                <div class="footer-column">
+                    <h3 class="footer-column-heading">COMPANY</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Help -->
+                <div class="footer-column">
+                    <h3 class="footer-column-heading">HELP</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 NOIR. All rights reserved.</p>
-            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 NOIR. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Demo Modal -->
+    <div id="demoOverlay" class="demo-overlay">
+        <div class="demo-modal">
+            <p class="demo-eyebrow">DEMO SITE</p>
+            <h2 class="demo-headline">This is a concept.</h2>
+            <p class="demo-body">NOIR is a portfolio piece crafted by Chizzy Visuals to showcase premium branding and web design. This feature is not functional.</p>
+            <div class="demo-divider"></div>
+            <p class="demo-credit">Design & Development by <span>Chizzy Visuals</span></p>
+            <button id="closeDemo" class="demo-close-button">CLOSE</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
