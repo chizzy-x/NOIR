@@ -151,16 +151,19 @@ const mobileMenuNav = document.querySelectorAll('.mobile-menu-nav a');
 
 menuToggle.addEventListener('click', () => {
     mobileMenu.classList.add('active');
+    menuToggle.setAttribute('aria-expanded', 'true');
 });
 
 menuClose.addEventListener('click', () => {
     mobileMenu.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
 });
 
 // Close menu when clicking on a link
 mobileMenuNav.forEach(link => {
     link.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
     });
 });
 
@@ -168,6 +171,7 @@ mobileMenuNav.forEach(link => {
 mobileMenu.addEventListener('click', (e) => {
     if (e.target === mobileMenu) {
         mobileMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
     }
 });
 

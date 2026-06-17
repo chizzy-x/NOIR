@@ -842,37 +842,42 @@ body {
 /* SECTION 3 */
 .sec-3 {
     display: flex;
-    /* justify-content: center; */
     position: relative;
-    height: 90vh;
+    min-height: 82vh;
+    padding: clamp(96px, 13vh, 150px) clamp(28px, 6vw, 84px);
     align-items: center;
     overflow: hidden;
-    /* border: 1px solid gold; */
+    background: #050505;
 }
 
 .sec-3 img {
-    filter: brightness(0.45) grayscale(100%);
+    filter: brightness(0.5) grayscale(100%);
     position: absolute;
     inset: 0;
     object-fit: cover;
+    object-position: center;
     width: 100%;
+    height: 100%;
     z-index: 0;
 }
 
-/* .sec-3::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(8, 8, 8, 0.55);
-  z-index: 1;`` 
-} */
+.sec-3::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.68) 42%, rgba(0, 0, 0, 0.22) 100%),
+        radial-gradient(circle at 18% 45%, rgba(201, 169, 110, 0.16), transparent 32%);
+}
+
 .sec-3 .content {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: 38px;
-    margin-left: 60px;
-
+    gap: clamp(18px, 3vw, 30px);
+    width: min(100%, 680px);
+    margin-left: 0;
 }
 
 .sec-3 .content::before {
@@ -883,29 +888,18 @@ body {
 }
 
 .sec-3 .content h1 {
-    font-size: 65px;
-    line-height: 0.5;
-    /* color: #b68643; */
-    /* background: linear-gradient(135deg,
-            #c9a43f 0%,
-            #F5E27A 40%,
-            #c49925 60%,
-            #a87847 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: rgba(238, 189, 98, 0.829); */
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 0.95;
     color: #bd8e37;
     font-family: 'Fragor';
-    /* margin-left: 10px; */
-    /* font-family: "Cormorant Garamond", sans-serif; */
     word-spacing: 2px;
+    max-width: 720px;
 }
 
 .sec-3 .content h4 {
     color: rgba(201, 169, 110, 0.7);
     font-family: "Montserrat", sans-serif;
-    font-size: 20px;
+    font-size: clamp(12px, 1.2vw, 16px);
     font-weight: 400;
     letter-spacing: 0.34em;
     text-transform: uppercase;
@@ -913,12 +907,11 @@ body {
 }
 
 .sec-3 .content p {
-    width: 500px;
-    /* font-family: 'Inter'; */
+    width: min(100%, 560px);
     font-family: 'Inter', sans-serif;
-    color: rgba(255, 250, 240, 0.76);
-    font-size: 17px;
-    line-height: 1.8;
+    color: rgba(255, 250, 240, 0.78);
+    font-size: clamp(15px, 1.35vw, 18px);
+    line-height: 1.85;
 }
 
 /* SECTION 4 */
@@ -1881,9 +1874,9 @@ footer {
 .mobile-menu-button {
     display: none;
     background: none;
-    border: none;
+    border: 0;
     color: #F5F0E8;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
     padding: 8px;
     transition: color 0.3s ease;
@@ -1899,30 +1892,31 @@ footer {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: #0A0A0A;
-    z-index: 9998;
+    z-index: 10000;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 24px;
+    min-height: 68px;
+    padding: 0;
+    background: rgba(10, 10, 10, 0.88);
+    box-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
 }
 
 .mobile-menu.active {
     display: flex;
+    bottom: 0;
+    background: rgba(5, 5, 5, 0.96);
 }
 
 .mobile-menu-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 24px;
+    min-height: 68px;
+    padding: 0 22px;
     width: 100%;
     box-sizing: border-box;
+    gap: 20px;
 }
 
 .mobile-menu-logo {
@@ -1936,6 +1930,7 @@ footer {
 }
 
 .mobile-menu-close {
+    display: none;
     background: none;
     border: none;
     color: #F5F0E8;
@@ -1949,19 +1944,36 @@ footer {
     color: #D4AF37;
 }
 
+.mobile-menu.active .mobile-menu-button {
+    display: none;
+}
+
+.mobile-menu.active .mobile-menu-close {
+    display: block;
+}
+
 .mobile-menu-nav {
-    display: flex;
+    display: none;
     flex-direction: column;
-    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    gap: 28px;
     text-align: center;
-    margin-top: 100px;
+    padding: 72px 24px 48px;
+}
+
+.mobile-menu.active .mobile-menu-nav {
+    display: flex;
 }
 
 .mobile-menu-nav a {
     font-family: 'Fragor';
-    font-size: 32px;
+    font-size: clamp(30px, 9vw, 54px);
     color: #bd8e37;
     text-decoration: none;
+    line-height: 1;
     transition: color 0.3s ease;
 }
 
@@ -1991,6 +2003,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .header{
+        display: none;
+    }
     .header-nav {
         display: none;
     }
@@ -1998,6 +2013,9 @@ footer {
     width: 100%;
     max-width: 800px;
 }
+    .mobile-menu{
+        display: flex;
+    }
 
     .mobile-menu-button {
         display: block;
@@ -2026,20 +2044,6 @@ footer {
     .collection-card:nth-child(3) {
         height: 400px;
         transform: none;
-    }
-
-    .sec-3 .content {
-        margin-left: 20px;
-        gap: 24px;
-    }
-
-    .sec-3 .content h1 {
-        font-size: 48px;
-    }
-
-    .sec-3 .content p {
-        width: 100%;
-        font-size: 14px;
     }
 
     .sec-4 {
@@ -2183,6 +2187,7 @@ footer {
     .hero-text {
     width: 100%;
     max-width: 800px;
+    /* font-size: 30rem; */
 }
 
     .header h1 {
@@ -2238,19 +2243,11 @@ footer {
 
 
 
-/* CLAUDE SONNET */
-/* ============================================
-   NOIR — CSS FIXES
-   Paste these at the very bottom of style.css
-   ============================================ */
-
-/* Fix 1: hero-text hardcoded 800px width */
-
 
 /* Fix 2: sec-3 paragraph hardcoded 500px */
 .sec-3 .content p {
     width: 100%;
-    max-width: 500px;
+    max-width: 560px;
 }
 
 /* Fix 3: sec-6 heading hardcoded 600px */
@@ -2272,37 +2269,43 @@ footer {
 
 /* Fix 6: sec-3 headline line-height too tight on mobile */
 .sec-3 .content h1 {
-    line-height: 1.05;
+    line-height: 0.95;
 }
 
 /* Fix 7: sec-3 mobile */
 @media (max-width: 768px) {
     .sec-3 {
-        height: auto;
-        min-height: 70vh;
-        padding: 80px 20px;
+        min-height: auto;
+        padding: 96px 22px 92px;
         background-color: #000;
     }
 
     .sec-3 img {
-        display: none;
+        display: block;
+        filter: brightness(0.34) grayscale(100%);
+        object-position: 58% center;
     }
 
     .sec-3 .content {
         margin-left: 0;
-        gap: 24px;
+        gap: 20px;
     }
 
     .sec-3 .content h1 {
-        font-size: clamp(32px, 7vw, 48px);
+        font-size: clamp(38px, 11vw, 56px);
+        line-height: 0.98;
     }
 
     .sec-3 .content h4 {
-        font-size: 13px;
+        font-size: 12px;
+        letter-spacing: 0.24em;
     }
 
     .sec-3 .content p {
         width: 100%;
+        max-width: 34rem;
+        font-size: 15px;
+        line-height: 1.75;
     }
 }
 
