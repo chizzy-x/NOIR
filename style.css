@@ -322,6 +322,30 @@ body {
     }
 }
 
+@keyframes sec6ImgIntro {
+    from {
+        opacity: 0;
+        transform: translate(-50px, 60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes sec6FadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .hero-text {
     display: flex;
@@ -1306,6 +1330,8 @@ body {
     letter-spacing: 0.28em;
     text-transform: uppercase;
     line-height: 1.4;
+    opacity: 0;
+    animation: sec6FadeUp 0.8s ease-out forwards paused;
 }
 
 .sec-6 .content .text h1 {
@@ -1314,6 +1340,8 @@ body {
     font-family: 'Fragor';
     color: #bd8e37;
     line-height: .9;
+    opacity: 0;
+    animation: sec6FadeUp 0.8s ease-out 0.15s forwards paused;
 }
 
 .sec-6 .content .text p {
@@ -1321,6 +1349,8 @@ body {
     font-size: 17px;
     font-family: "Inter";
     color: rgba(255, 250, 240, 0.76);
+    opacity: 0;
+    animation: sec6FadeUp 0.8s ease-out 0.3s forwards paused;
 }
 
 .sec-6 .content img {
@@ -1335,6 +1365,8 @@ body {
             rgba(0, 0, 0, 0.72) 69%,
             transparent 88%);
     /* height: 800px; */
+    animation: sec6ImgIntro 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s forwards paused;
+    opacity: 0;
 }
 .sec-6 .content .text a {
     flex: 0 0 auto;
@@ -1348,6 +1380,8 @@ body {
     text-transform: uppercase;
     color: #bd8e37;
     transition: color 0.4s ease;
+    opacity: 0;
+    animation: sec6FadeUp 0.8s ease-out 0.6s forwards paused;
 }
 
 .sec-6 .content .text a:hover {

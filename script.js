@@ -68,6 +68,32 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// SECTION 6 (ABOUT) ANIMATION ON SCROLL INTO VIEW
+const sec6 = document.querySelector('.sec-6');
+if (sec6) {
+    const sec6Observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const h4 = entry.target.querySelector('.sec-6 .content .text h4');
+                const h1 = entry.target.querySelector('.sec-6 .content .text h1');
+                const p = entry.target.querySelector('.sec-6 .content .text p');
+                const a = entry.target.querySelector('.sec-6 .content .text a');
+                const img = entry.target.querySelector('.sec-6 .content img');
+                
+                if (h4) h4.style.animationPlayState = 'running';
+                if (h1) h1.style.animationPlayState = 'running';
+                if (p) p.style.animationPlayState = 'running';
+                if (a) a.style.animationPlayState = 'running';
+                if (img) img.style.animationPlayState = 'running';
+                
+                sec6Observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    sec6Observer.observe(sec6);
+}
+
 
 let currentIndex = 0;
 
@@ -245,7 +271,7 @@ setTimeout(() => {
     const animatedElements = document.querySelectorAll('.fade-in, .fade-up, .fade-left, .fade-right, .img-intro');
     
     const observerOptions = {
-        threshold: 0.15,
+        threshold: 0.4,
         rootMargin: '0px 0px -50px 0px'
     };
     
