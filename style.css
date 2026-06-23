@@ -660,6 +660,7 @@ body {
         inset: 34% -56% 0 42%;
         opacity: 0.42;
     }
+
 }
 
 @media (max-width: 380px) {
@@ -1270,6 +1271,7 @@ body {
 }
 
 @media (max-width: 640px) {
+
     .sec-4 {
         padding: 92px 20px;
     }
@@ -1833,9 +1835,22 @@ footer {
         font-size: 10px;
         letter-spacing: 0.15em;
     }
+
+}
+
+@media (max-width: 520px) {
+    .sec-3 .content h1{
+        max-width: 200px;
+    }  
 }
 
 @media (max-width: 480px) {
+    .collection-card:nth-child(1) img {
+    object-position: 40% 6%;
+}
+    .sec-3 .content h1{
+        max-width: 380px;
+    }
     .footer-features-container {
         grid-template-columns: 1fr;
         gap: 24px;
